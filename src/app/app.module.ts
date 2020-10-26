@@ -1,18 +1,18 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
-import { HearderComponent } from './hearder/header.component';
-import { KartComponent } from './cart/cart.component';
-import { ProdutComponent } from './product/produt.component';
-import { ProductComponent } from './product/product.component';
-import { LoginComponent } from './login/login.component';
+import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
-@NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, HearderComponent, KartComponent, ProdutComponent, ProductComponent, LoginComponent ],
-  bootstrap:    [ AppComponent ]
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppModule { }
+export class AppComponent {
+ constructor( router: Router) {
+     // tslint:disable-next-line:curly
+     if (!returnUrl) return;
+     localStorage.removeItem('returnUrl');
+     router.navigateByUrl(returnUrl);
+   });
+ }
+}
